@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.x-red.svg)](https://streamlit.io)
 [![LangChain](https://img.shields.io/badge/LangChain-Enabled-green.svg)](https://langchain.com)
-[![Gemini](https://img.shields.io/badge/Google-Gemini-orange.svg)](https://ai.google.dev)
+[![Groq](https://img.shields.io/badge/Groq-LLaMA-purple.svg)](https://groq.com)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
 
@@ -50,7 +50,7 @@ A Multi-Agent AI system that:
 
 ## ✅ Implemented Solution
 
-**IntelliResearch Pro** is a Streamlit-based multi-agent application that enables:
+**IntelliResearch Pro** is a Streamlit-based multi-agent application powered by **Groq API** and **LLaMA** that enables:
 
 | Feature | Description |
 |---|---|
@@ -66,7 +66,7 @@ A Multi-Agent AI system that:
 
 1. User uploads a research PDF via the **Command Module** sidebar
 2. The system ingests, chunks, and indexes the document using vector embeddings
-3. Multiple AI agents are triggered simultaneously:
+3. Multiple AI agents powered by **LLaMA via Groq** are triggered simultaneously:
    - **Summary Agent** → Generates Executive Summary
    - **Insight Agent** → Extracts Technical Insights
    - **Code Agent** → Explains Code Logic
@@ -80,10 +80,10 @@ A Multi-Agent AI system that:
 | Layer | Technology |
 |---|---|
 | **Frontend / UI** | Streamlit |
-| **AI / LLM Backend** | Google Gemini API |
+| **AI / LLM Backend** | Groq API + LLaMA 3 |
 | **PDF Processing** | PyMuPDF `fitz` / pdfplumber |
 | **Vector Store** | FAISS / ChromaDB |
-| **Embeddings** | Google Generative AI Embeddings |
+| **Embeddings** | HuggingFace Embeddings |
 | **Multi-Agent Framework** | LangChain Agents |
 | **Language** | Python 3.10+ |
 | **Config Management** | python-dotenv + config.py |
@@ -121,10 +121,16 @@ A Multi-Agent AI system that:
  ┌────▼────┐        ┌─────▼─────┐          ┌───────▼──────┐
  │ Summary │        │ Technical │          │     Code     │
  │  Agent  │        │  Insight  │          │  Explainer   │
- │         │        │   Agent   │          │    Agent     │
+ │(LLaMA)  │        │   Agent   │          │    Agent     │
+ │         │        │ (LLaMA)   │          │  (LLaMA)     │
  └────┬────┘        └─────┬─────┘          └───────┬──────┘
       │                   │                        │
       └───────────────────▼────────────────────────┘
+                          │
+                 ┌────────▼────────┐
+                 │   Groq API      │
+                 │ (LLaMA 3 Model) │
+                 └────────┬────────┘
                           │
            ┌──────────────▼──────────────┐
            │       Deep Query Engine      │
@@ -145,7 +151,7 @@ A Multi-Agent AI system that:
 
 - Python 3.10 or above
 - pip package manager
-- Google Gemini API key — [Get one here](https://ai.google.dev)
+- Groq API key — [Get one here](https://console.groq.com)
 - Git installed on your machine
 
 ### Step 1 — Clone the Repository
@@ -178,7 +184,7 @@ pip install -r requirements.txt
 Create a `.env` file in the root folder and add:
 
 ```env
-GOOGLE_API_KEY=your_google_gemini_api_key_here
+GROQ_API_KEY=your_groq_api_key_here
 ```
 
 > ⚠️ Never commit your `.env` file. It is already listed in `.gitignore`.
@@ -246,8 +252,8 @@ The demo covers:
 | 2 | PDF text extraction failing for scanned PDFs | Switched from PyPDF2 to PyMuPDF (fitz) for reliable text and image PDF handling |
 | 3 | LLM hallucinating answers on deep queries | Implemented RAG using FAISS so the model answers only from document context |
 | 4 | Slow response time for large PDFs | Added chunking strategy with 1000 token size and parallel agent execution |
-| 5 | Gemini API rate limits during multi-agent calls | Added exponential backoff retry logic using the tenacity library |
-| 6 | Typo handling in Deep Query input | Gemini naturally interprets and corrects typos in context with no extra preprocessing |
+| 5 | Groq API rate limits during multi-agent calls | Added exponential backoff retry logic using the tenacity library |
+| 6 | Typo handling in Deep Query input | LLaMA via Groq naturally interprets and corrects typos in context |
 | 7 | Session state lost on page refresh | Used st.session_state to persist uploaded documents and agent results |
 | 8 | venv folder accidentally pushed to GitHub | Added venv/ to .gitignore and ran git rm -r --cached venv/ to untrack it |
 
@@ -259,7 +265,8 @@ The demo covers:
 |---|---|
 | Streamlit Documentation | https://docs.streamlit.io |
 | LangChain Documentation | https://docs.langchain.com |
-| Google Gemini API | https://ai.google.dev/docs |
+| Groq API Console | https://console.groq.com |
+| LLaMA Model by Meta | https://llama.meta.com |
 | PyMuPDF Documentation | https://pymupdf.readthedocs.io |
 | FAISS Vector Store | https://faiss.ai |
 | ChromaDB Documentation | https://docs.trychroma.com |
