@@ -208,25 +208,27 @@ The app will launch at `http://localhost:8501` in your browser.
 
 ## 📸 Screenshots
 
-### 1. Main Interface — PDF Upload and Executive Summary
+### 1. Main Interface — PDF Upload and
+<img width="889" height="600" alt="home" src="https://github.com/user-attachments/assets/dcb761f2-6316-4329-8a0f-cada38ade44f" />
 
-![Main Interface](screenshots/screenshot1.png)
+ ### 2. Executive Summary
+ <img width="1086" height="616" alt="summary" src="https://github.com/user-attachments/assets/aee0ab4a-c101-4f9b-a141-c7e7b6bcd0c2" />
 
-> The AI generates a 3-paragraph Executive Summary and 5 Technical Insights immediately after PDF upload.
+> The AI generates a 3-paragraph Executive Summary
 
----
+ ### 3.Technical Insights immediately after PDF upload.
+ <img width="932" height="739" alt="insights" src="https://github.com/user-attachments/assets/77603f17-6439-4c6a-9442-9c726be1e018" />
 
-### 2. Deep Query and Code Logic Explainer
+### 4. Deep Query 
+<img width="750" height="588" alt="deep-query" src="https://github.com/user-attachments/assets/f50f53a3-cafc-41c2-8b15-0617bb869708" />
 
-![Deep Query](screenshots/screenshot2.png)
+### 5. Code Logic Explainer
+<img width="951" height="819" alt="code-logic" src="https://github.com/user-attachments/assets/5aad0c2e-85a5-4a48-b427-b47ab15672a3" />
+
+### 6.Final Comprehensive Report
+<img width="1512" height="601" alt="Finalreport" src="https://github.com/user-attachments/assets/d4dc351f-98e7-4267-a171-75cccba37fd0" />
 
 > User types a natural language question and the AI responds with structured, context-aware answers from the document.
-
----
-
-### 3. Final Comprehensive Report
-
-![Final Report](screenshots/screenshot3.png)
 
 > A fully structured markdown report covering all sections — auto-generated from the uploaded PDF.
 
@@ -234,7 +236,7 @@ The app will launch at `http://localhost:8501` in your browser.
 
 ## 🎥 Demo Recording
 
-> 📹 **Watch the full demo here:** *(Add your Loom or YouTube link here)*
+> > 📹 **Watch the full demo here:** [Click to Watch Demo](https://drive.google.com/file/d/1VP8QisOo3JhiGuIBa3NipjcpYpxEytZs/view?usp=sharing)
 
 The demo covers:
 - Uploading a research PDF
