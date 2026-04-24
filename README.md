@@ -1,3 +1,7 @@
+## 🎥 Project Demo Presentation
+
+👉 [Click here to view the presentation](https://drive.google.com/file/d/1HhOSRvAHkw7QgaGkZ7KjjACCGHWTCi59/view?usp=sharing)
+
 # 🧬 IntelliResearch Pro
 
 > **Multi-Agent Academic Intelligence & Code Analysis Platform**
