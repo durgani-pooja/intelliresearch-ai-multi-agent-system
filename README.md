@@ -212,7 +212,7 @@ The app will launch at `http://localhost:8501` in your browser.
 
 ## 📸 Screenshots
 
-### 1. Main Interface — PDF Upload and
+### 1. Main Interface — PDF Upload 
 <img width="889" height="600" alt="home" src="https://github.com/user-attachments/assets/dcb761f2-6316-4329-8a0f-cada38ade44f" />
 
  ### 2. Executive Summary
@@ -237,6 +237,9 @@ The app will launch at `http://localhost:8501` in your browser.
 > A fully structured markdown report covering all sections — auto-generated from the uploaded PDF.
 
 ---
+### 🔗n8n Workflow
+<img width="1048" height="582" alt="Screenshot 2026-04-24 202001" src="https://github.com/user-attachments/assets/bdff41d6-82a7-4015-b66c-77755ace2b14" />
+
 
 ## 🎥 Demo Recording
 
